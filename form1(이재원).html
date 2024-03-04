@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <style>
+        div#app {margin: 20px auto; padding: 20px; width: 300px; border: 1px solid gray; box-shadow: 5px 5px 5px #aaa;}
+        p{font-size: 10pt; color: black;}
+        select {padding: 5px; font-size: 10pt; width: 150px; margin: 15px; margin-left: 0;}
+        input {padding: 5px; margin: 15px; margin-left: 0;}
+    </style>
+
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+
+    <input text="text" placeholder="이름을 입력하세요" v-model="name"/>
+
+    <div>
+        <input type="radio" value="male" v-model="sex">남자
+        <input type="radio" value="female" v-model="sex">여자
+    </div>
+
+    <select v-model="major">
+        <option value="">전공을 선택하세요</option>
+        <option value="소프">소프트웨어공학</option>
+        <option value="컴공">컴퓨터공학과</option>
+    </select>
+
+    <p><input type="checkbox" v-model="value"> 활성화</p>
+
+    <hr>
+
+    <p>이름: {{name}}</p>
+    <p>성별: {{sex}}</p>
+    <p>전공: {{major}}</p>
+    <p>활성화: {{value}}</p>
+    </div>
+
+    <script>
+        let app ={
+            data() {
+                return{
+                    title: "입력 양식",
+                    name: "",
+                    sex: "",
+                    major: "",
+                    value: false
+                }
+            }
+        }
+        Vue.createApp(app).mount("#app")
+    </script>  
+
+</body>
+</html>

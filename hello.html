@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    <!-- div# 하면 <div id=""></div> 이 된다.-->    
+    <div id="app">
+        <h1>welcome</h1>
+        <h2>{{title}}</h2>
+        <p>안녕하세요</p>
+        <p>{{body}}</p>
+        <hr>
+    <!-- v-model 지시자 -->
+    <input type="text" v-model="title">
+    <input type="text" v-model="body">
+    <hr>
+    <input type="text" v-model="title">
+    <input type="text" v-model="body">
+    <hr>
+    <h2> checkbox </h2>
+    <p>{{value}}
+        <input type="checkbox" v-model="value">
+        <input type="checkbox" v-model="value">
+    </p>
+    <hr>
+    <p>{{choice}}
+        <select v-model="choice">
+            <option value="노란색">yellow</option>
+            <option value="초록색">green</option>
+            <option value="파랑색">blue</option>
+            <option value="빨간색">red</option>
+        </select>
+        <input type="text" v-model="choice">
+    </p>
+    <hr>
+    <div>
+        <input type="radio" value="html" v-model="IT">html
+        <input type="radio" value="css" v-model="IT">css
+        <input type="radio" value="java" v-model="IT">java
+        <input type="radio" value="vue" v-model="IT">vue
+        <br>
+        {{IT}}
+    </div>
+    </div>
+
+    <script>
+        let app = {
+            data() {
+                return {
+                    title: "감사합니다.",
+                    body: "good morning",
+                    value:false,
+                    choice:"red",
+                    IT:"vue"
+                }
+            }
+        }
+        Vue.createApp(app).mount("#app") 
+
+
+    </script>
+    
+</body>
+</html>
